@@ -8,5 +8,6 @@ class Restaurantpizza < ApplicationRecord
     def price_range
         if (price < 1 || price > 30)
             errors.add(:price, "the price must be between 0 and 30")
+        end
     end
 end

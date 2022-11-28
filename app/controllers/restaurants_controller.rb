@@ -3,7 +3,8 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
 
     def index
-        render json: Restaurant.all
+        restaurant = Restaurant.all 
+        render json: restaurant
     end
 
     def show
