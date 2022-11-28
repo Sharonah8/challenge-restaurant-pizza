@@ -3,6 +3,7 @@ class CreateRestaurantpizzas < ActiveRecord::Migration[7.0]
     create_table :restaurantpizzas do |t|
       t.integer :pizza_id
       t.integer :restaurant_id
+      t.integer :price
 
       t.timestamps
     end
