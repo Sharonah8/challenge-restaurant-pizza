@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Restaurant.destroy_all
+Pizza.destroy_all
+Restaurantpizza.destroy_all
+
+5.times do
+    Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.full_address)
+end
+
+5.times do
+    ingredients = []
+    3.times do
+        ingredients << Faker::Food.ingredient
+    end
+    Pizza.create(name:ingredients[-1], ingredients:
+    ingredients.join(", "))
+end
