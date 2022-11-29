@@ -3,7 +3,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_method
 
 
 def create
-    restaurantpizza = Restaurantpizza.create(restaurantpizza_params)
+    restaurantpizza = Restaurantpizza.create!(restaurantpizza_params)
     render json: restaurantpizza, status: :created 
 end
 
@@ -14,6 +14,6 @@ def restaurantpizza_params
 end
 
 def unprocessable_entity_method(exception)
-    render json: { errors: exception.record.errors}, status: :unprocessable_entity_method
+    render json: { errors: exception.record.errors}, status: :unprocessable_entity
 end
 end
